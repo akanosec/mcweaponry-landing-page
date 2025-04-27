@@ -51,37 +51,51 @@
     letter-spacing: 2px;
   }
 
-  .tagline {
-    font-weight: 300;
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
   .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
     gap: 1rem;
-    padding: 3rem 2rem;
+    margin: 4rem auto;
+    width: 90%;
+    max-width: 1200px;
   }
 
-  .gallery img {
+  .gallery-image {
     width: 100%;
-    border: 2px solid #333;
-    border-radius: 8px;
+    height: auto;
     object-fit: cover;
-    height: 300px;
-    background-color: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-image:hover {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 1024px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Responsive change for mobile */
+  @media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
   }
 
   section {
   padding: 4rem 2rem;
 }
 
+/*
 .gallery-section {
   background-color: #121212;
   color: #fff;
 }
+*/
 
 .contact-section {
   background-color: #000;
@@ -131,13 +145,10 @@ h2::after {
 </section>
 
 <!-- Gallery Section -->
-<section class="gallery-section">
-  <h2>Showcase</h2>
-  <div class="gallery">
-    {#each galleryImages as image}
-      <img src={`/images/${image}`} alt={image} transition:fade={{ duration: 800 }} />
-    {/each}
-  </div>
+<section class="gallery">
+  {#each galleryImages as image (image)}
+    <img src={`/images/${image}`} alt="{image}" class="gallery-image" />
+  {/each}
 </section>
 
 <!-- Contact Section -->

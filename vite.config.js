@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+// vite.config.js
+import { defineConfig } from 'vite';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
 
-// https://vite.dev/config/
 export default defineConfig({
+  base: '/',  // <--- ROOT. Because it's at mcweaponry.spinnycat.com/
   plugins: [svelte()],
-})
+});
