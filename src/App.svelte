@@ -197,7 +197,7 @@
 <!-- Contact Section -->
 <section class="contact-section">
   <h2>Contact Us</h2>
-  <p>Email <a href="mailto:scarlett@mcweaponry.com">scarlett@mcweaponry.com</a> or DM <a href="https://x.com/scarlettajc" target="_blank">@scarlettajc</a> on X</p>
+  <p>Email <a href="mailto:scarlett@mcweaponry.com">scarlett@mcweaponry.com</a> for inquiries.</p>
 </section>
 
 <!-- Footer -->
