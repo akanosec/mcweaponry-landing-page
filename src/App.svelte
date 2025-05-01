@@ -11,13 +11,71 @@
 </script>
 
 <style>
- :global(body) {
+  /* Global Typography */
+  :global(body) {
     margin: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
     background-color: #0e0e0e;
     color: #f5f5f5;
+    line-height: 1.6;
+    font-size: 16px;
   }
 
+  :global(h1),
+  :global(h2),
+  :global(h3),
+  :global(h4) {
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  :global(h1) {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  :global(h2) {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  :global(h2)::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #e63946;
+    margin: 0.5rem auto 0;
+  }
+
+  :global(h3) {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  :global(p) {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+    color: #ddd;
+  }
+
+  :global(a) {
+    color: #e63946;
+    text-decoration: none;
+  }
+
+  :global(a:hover) {
+    text-decoration: underline;
+  }
+
+  /* Hero Section */
   .hero {
     position: relative;
     background-image: url('/images/hero_gun.webp');
@@ -34,7 +92,7 @@
   .hero .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4); /* dark semi-transparent */
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
   }
 
@@ -43,43 +101,30 @@
     backdrop-filter: blur(6px);
     border-radius: 8px;
     padding: 1.5rem;
+    z-index: 2;
   }
 
   .hero h1 {
-    font-family: 'Anton', sans-serif;
     font-size: 3.5rem;
     letter-spacing: 2px;
   }
 
+  /* Gallery Section */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin: 4rem auto;
     width: 90%;
     max-width: 1200px;
   }
-  /*
-  .gallery-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-  }
-
-  .gallery-image:hover {
-    transform: scale(1.05);
-  }
-  */
 
   .gallery img {
     width: 100%;
-    height: 300px; /* You can adjust this height */
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
   }
 
@@ -93,50 +138,34 @@
     }
   }
 
-  /* Responsive change for mobile */
   @media (max-width: 768px) {
     .gallery {
-        grid-template-columns: 1fr; /* 1 column on mobile */
+      grid-template-columns: 1fr;
     }
   }
 
+  /* Sections */
   section {
-  padding: 4rem 2rem;
-}
+    padding: 4rem 2rem;
+  }
 
-/*
-.gallery-section {
-  background-color: #121212;
-  color: #fff;
-}
-*/
+  .contact-section {
+    background-color: #000;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
 
-.contact-section {
-  background-color: #000;
-  color: #f5f5f5;
-  text-align: center;
-}
+  .contact-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
 
-h2 {
-  font-family: 'Anton', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-h2::after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 3px;
-  background: #e63946;
-  margin: 0.5rem auto 0;
-}
-
+  /* Footer */
   footer {
     text-align: center;
     padding: 2rem 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #666;
     background-color: #111;
     margin-top: 4rem;
