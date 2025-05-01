@@ -1,12 +1,12 @@
 <script>
   import { fade } from 'svelte/transition';
   const galleryImages = [
-    '380_engraved.webp',
-    'gun_museum.webp',
-    'mp_riot.webp',
-    'p90_riot.webp',
-    'revolver_engraving.webp',
-    'usmc_gun.webp'
+    'top_left_gun.webp',
+    'top_center_gun.webp',
+    'top_right_gun.webp',
+    'bottom_left_gun.webp',
+    'bottom_center_gun.webp',
+    'bottom_right_gun.webp'
   ];
 </script>
 
@@ -20,7 +20,7 @@
 
   .hero {
     position: relative;
-    background-image: url('/images/background_engraving_silhouette.jpeg');
+    background-image: url('/images/hero_gun.webp');
     background-size: cover;
     background-position: center;
     color: white;
@@ -59,7 +59,7 @@
     width: 90%;
     max-width: 1200px;
   }
-
+  /*
   .gallery-image {
     width: 100%;
     height: auto;
@@ -71,6 +71,20 @@
 
   .gallery-image:hover {
     transform: scale(1.05);
+  }
+  */
+
+  .gallery img {
+    width: 100%;
+    height: 300px; /* You can adjust this height */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.03);
   }
 
   @media (max-width: 1024px) {
